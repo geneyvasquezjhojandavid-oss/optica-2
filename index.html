@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Óptica · Gestión</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;700&display=swap">
+  <link rel="stylesheet" href="op.css">
+</head>
+<body>
+
+  <!-- Inicio de sesión -->
+  <main id="login" class="login">
+    <form id="form-login" class="login-card">
+      <h1>Óptica</h1>
+      <p class="sub">Ingresa para gestionar clientes, ventas y órdenes.</p>
+      <label>Correo <input name="email" type="email" required autocomplete="username"></label>
+      <label>Contraseña <input name="password" type="password" required autocomplete="current-password"></label>
+      <button class="btn" type="submit">Iniciar sesión</button>
+      <p id="error-login" class="error" role="alert" hidden></p>
+      <p id="aviso-demo" class="demo" hidden>Modo demo: los datos se guardan solo en este navegador. Conecta Supabase en <code>js/config.js</code>.</p>
+    </form>
+  </main>
+
+  <!-- Aplicación -->
+  <div id="app" class="app" hidden>
+    <aside class="lateral">
+      <h1 class="logo">Óptica</h1>
+      <p id="rol" class="rol"></p>
+      <nav id="menu"></nav>
+      <button id="salir" class="link">Cerrar sesión</button>
+    </aside>
+    <section id="vista" class="vista" aria-live="polite"></section>
+  </div>
+
+  <dialog id="dlg"><form id="dlg-form" method="dialog"></form></dialog>
+  <div id="toast" class="toast" role="status"></div>
+
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.45.4/dist/umd/supabase.js"></script>
+  <script src="confi.js"></script>
+  <script src="db.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
